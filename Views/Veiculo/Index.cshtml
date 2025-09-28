@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ProjetoEstacionamentoWebAPI.Models.Veiculo>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.pesid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.veimarca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.veimodelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.veiplaca)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.pesid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.veimarca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.veimodelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.veiplaca)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.pveid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.pveid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.pveid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

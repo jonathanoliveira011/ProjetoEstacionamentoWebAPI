@@ -1,0 +1,51 @@
+﻿@model ProjetoEstacionamentoWebAPI.Models.Veiculo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>Veiculo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pesid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pesid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.veimarca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.veimarca)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.veimodelo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.veimodelo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.veiplaca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.veiplaca)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.pveid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>

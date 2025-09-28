@@ -1,0 +1,6 @@
+@ProjetoEstacionamentoWebAPI_HostAddress = http://localhost:5103
+
+GET {{ProjetoEstacionamentoWebAPI_HostAddress}}/
+Accept: application/json
+
+###
