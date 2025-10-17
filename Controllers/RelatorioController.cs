@@ -162,7 +162,7 @@ namespace ProjetoEstacionamentoWebAPI.Controllers
             var pastaRelatorios = Path.Combine(Directory.GetCurrentDirectory(), "Relatorios");
             var caminho = Path.Combine(pastaRelatorios, nomeArquivo);
             if (!System.IO.File.Exists(caminho))
-                return NotFound(new ErroRetorno { MensagemErro = "Arquivo não encontrado." });
+                return NotFound(new ErroRetorno {Sucess = false, Mensagem = "Arquivo não encontrado." });
 
             var tipoMime = "application/pdf"; // ou "application/pdf" se for PDF
             return File(System.IO.File.ReadAllBytes(caminho), tipoMime, nomeArquivo);

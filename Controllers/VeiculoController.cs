@@ -27,7 +27,7 @@ namespace ProjetoEstacionamentoWebAPI.Controllers
             var veiculos = await _context.tblpessoaveiculo.ToListAsync();
             if(veiculos.Count > 0) return Ok(veiculos);
 
-            return NotFound(new ErroRetorno { MensagemErro = "Nenhum veículo encontrado" });
+            return NotFound(new ErroRetorno {Sucess = false, Mensagem = "Nenhum veículo encontrado" });
 
         }
 
@@ -37,7 +37,7 @@ namespace ProjetoEstacionamentoWebAPI.Controllers
             var pessoa = _context.tblpessoaveiculo.Find(id);
             if (pessoa == null)
             {
-                return NotFound(new ErroRetorno { MensagemErro = "Veículo não encontrado." });
+                return NotFound(new ErroRetorno {Sucess = false, Mensagem = "Veículo não encontrado." });
             }
             return Ok(pessoa);
         }

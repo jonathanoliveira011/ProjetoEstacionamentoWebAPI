@@ -28,7 +28,7 @@ namespace ProjetoEstacionamentoWebAPI.Controllers
             var pessoa = _context.tblpessoa.Find(id);
             if (pessoa == null)
             {
-                return NotFound(new ErroRetorno { MensagemErro = "Pessoa não encontrada." });
+                return NotFound(new ErroRetorno { Sucess = false, Mensagem = "Pessoa não encontrada." });
             }
             return Ok(pessoa);
         }
